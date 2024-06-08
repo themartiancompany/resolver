@@ -39,6 +39,11 @@ _resolver() {
     _resolver \
     _args=() \
     _resolver_opts=()
+  if [[ "${quiet}" == "n" ]]; then
+    _resolver_opts+=(
+      -v
+    )
+  fi
   if [[ "${_access}" == "local" ]]; then
     _resolver="hotspot"
   fi
